@@ -3,22 +3,35 @@ const usuario = {
     limiteGasto: 0,
     gastos: []
 };
-window.addEventListener("DOMContentLoaded", () => {
-    const usuarioGuardado = JSON.parse(localStorage.getItem("usuario"));
-    const gastosGuardados = JSON.parse(localStorage.getItem("gastos"));
 
-    if (usuarioGuardado && gastosGuardados) {
-        usuario.nombre = usuarioGuardado.nombre;
-        usuario.limiteGasto = usuarioGuardado.limiteGasto;
-        usuario.gastos = gastosGuardados;
+async function init() {
+    try {
+        const usuarioGuardado = JSON.parse(localStorage.getItem("usuario"));
+        const gastosGuardados = JSON.parse(localStorage.getItem("gastos"));
+
+        if (usuarioGuardado) {
+            usuario.nombre = usuarioGuardado.nombre;
+            usuario.limiteGasto = usuarioGuardado.limiteGasto;
+        }
+
+        if (gastosGuardados) {
+            usuario.gastos = gastosGuardados;
+        } else {
+            const response = await fetch("./gastos.json");
+            const data = await response.json();
+            usuario.gastos = data;
+            localStorage.setItem("gastos", JSON.stringify(usuario.gastos));
+        }
 
         document.getElementById("usuario-section").style.display = "none";
         document.getElementById("gasto-section").style.display = "block";
         document.getElementById("resultado-section").style.display = "block";
 
         mostrarGastos();
+    } catch (error) {
+        console.error("Error al cargar los datos:", error);
     }
-});
+}
 
 const formUsuario = document.getElementById("form-usuario");
 formUsuario.addEventListener("submit", (e) => {

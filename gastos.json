@@ -1,0 +1,17 @@
+[
+    {
+        "articulo": "Caf\u00e9",
+        "monto": 250,
+        "categoria": "Bebida"
+    },
+    {
+        "articulo": "Transporte",
+        "monto": 600,
+        "categoria": "Movilidad"
+    },
+    {
+        "articulo": "Comida",
+        "monto": 1200,
+        "categoria": "Almuerzo"
+    }
+]

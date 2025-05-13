@@ -1,37 +1,57 @@
-# Gestor de Gastos
+# 💰 Gestor de Gastos
 
-## Descripción
+## 📌 Descripción
 
-Este proyecto es un **Gestor de Gastos** que permite al usuario agregar gastos y verificar si se ha superado el límite de gasto establecido. 
-
-El sistema solicita al usuario su nombre y el límite de gasto, luego permite agregar varios gastos con su monto, artículo y categoría. Al final, muestra el gasto total acumulado y verifica si se ha excedido el límite.
-
-## Funcionalidades
-
-1. **Ingreso de Nombre y Límite**: El usuario ingresa su nombre y establece un límite de gasto.
-2. **Agregar Gastos**: El usuario puede agregar diferentes gastos con monto, artículo y categoría.
-3. **Verificación de Límite de Gasto**: El sistema muestra si el gasto total ha superado el límite de gasto.
-4. **Persistencia**: Los datos se almacenan en el navegador usando `localStorage`.
-
-## Tecnologías Usadas
-
-- **JavaScript** para la lógica.
-- **HTML** para la estructura básica de la página.
-
-## Instrucciones
-
-1. **Iniciar el Gestor**: El sistema solicitará el nombre del usuario y el límite de gasto.
-2. **Agregar Gastos**: El usuario podrá agregar varios gastos con el monto, artículo y categoría.
-3. **Verificar el Total de Gastos**: El sistema calculará el total acumulado y verificará si se ha excedido el límite de gasto.
-
-## Cómo Usarlo
-
-1. Clona o descarga este repositorio.
-2. Abre el archivo `index.html` en tu navegador.
-3. Sigue las instrucciones en los *prompts* para ingresar tu nombre, establecer el límite de gasto y agregar gastos.
-
-## Requisitos
-
-- Un navegador moderno con soporte para JavaScript.
+Este proyecto es un **Gestor de Gastos Personales** desarrollado como entrega final del curso de JavaScript en Coderhouse. Permite a los usuarios registrar sus gastos, categorizarlos y verificar si han superado un límite de gasto previamente establecido. Además, guarda los datos localmente y simula la carga de información desde una fuente externa.
 
 ---
+
+## 🛠️ Funcionalidades
+
+- ✅ **Carga de Usuario**: Permite ingresar nombre y un límite de gasto personalizado.
+- ✅ **Agregar Gastos**: Se pueden cargar múltiples gastos con artículo, monto y categoría.
+- ✅ **Visualización Dinámica**: Cada gasto se muestra como una tarjeta generada desde JavaScript.
+- ✅ **Resumen**: Se calcula el total gastado y se compara con el límite establecido.
+- ✅ **Persistencia de Datos**: Guarda usuario y gastos en `localStorage`.
+- ✅ **Carga de Datos Simulada**: Si no hay gastos previos, los carga automáticamente desde un archivo `gastos.json` usando `fetch`, `async/await` y `try/catch`.
+
+---
+
+## 🧰 Tecnologías Utilizadas
+
+- **JavaScript (Vanilla)**: Lógica de negocio, interacción con DOM y manejo de eventos.
+- **HTML + CSS**: Estructura y estilos.
+- **JSON (simulado)**: Fuente de datos externa.
+- **localStorage**: Persistencia local del navegador.
+
+---
+
+## ▶️ Cómo Usarlo
+
+1. Cloná o descargá el repositorio
+2. Abrí el archivo `index.html` en un navegador moderno
+3. Ingresá tu nombre y límite de gasto
+4. Agregá tantos gastos como desees
+5. Presioná “Finalizar carga” para ver el resumen total
+
+---
+
+## 📦 Estructura del Proyecto
+
+```
+EntregaFinal-GestorGastos/
+├── css/
+│   └── styles.css
+├── js/
+│   └── script.js
+├── gastos.json
+├── index.html
+└── README.md
+```
+
+---
+
+## 🧪 Requisitos
+
+- Navegador moderno (Chrome, Firefox, Edge, etc.)
+- No requiere servidor ni base de datos externa
